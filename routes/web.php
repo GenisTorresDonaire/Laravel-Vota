@@ -23,6 +23,9 @@ Route::get('logout', function () {
     return view('auth.logout');
 });
 
+Route::resource("consultas","ConsultaController");
+
+/*
 Route::get('consultas', function () {
     return view('consultas.consultas');
 });
@@ -34,7 +37,6 @@ Route::get('crear', function () {
 Route::get('invitar', function () {
     return view('consultas.invitar_consultas');
 });
-
-
+*/
 
 ?>
