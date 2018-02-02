@@ -8,27 +8,20 @@
 
         @if( true || Auth::check() )
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item {{ Request::is('catalog') && ! Request::is('catalog/create')? 'active' : ''}}">
+                    <li class="nav-item {{ Request::is('consultas') && ! Request::is('consultas/create')? 'active' : ''}}">
                         <a class="nav-link" href="{{url('/consultas')}}">
                             <span class="glyphicon glyphicon-film" aria-hidden="true"></span>
                             Consultas
                         </a>
                     </li>
-                    <li class="nav-item {{ Request::is('catalog') && ! Request::is('catalog/create')? 'active' : ''}}">
-                        <a class="nav-link" href="{{url('/crear')}}">
-                            <span class="glyphicon glyphicon-film" aria-hidden="true"></span>
-                            Crear Consultas
-                        </a>
-                    </li>
-                    <li class="nav-item {{ Request::is('catalog') && ! Request::is('catalog/create')? 'active' : ''}}">
-                        <a class="nav-link" href="{{url('/invitar')}}">
-                            <span class="glyphicon glyphicon-film" aria-hidden="true"></span>
-                            Invitar a Consulta
+                    <li class="nav-item {{  Request::is('consultas/create') ? 'active' : ''}}">
+                        <a class="nav-link" href="{{url('/consultas/create')}}">
+                            <span>&#10010</span> Nueva Consultas
                         </a>
                     </li>
                 </ul>
-
                 <ul class="navbar-nav navbar-right">
                     <li class="nav-item">
                         <form action="{{ url('/logout') }}" method="POST" style="display:inline">

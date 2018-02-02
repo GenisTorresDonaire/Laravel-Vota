@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('home');
 });
 
+/*
 Route::get('login', function () {
     return view('auth.login');
 });
@@ -22,6 +23,7 @@ Route::get('login', function () {
 Route::get('logout', function () {
     return view('auth.logout');
 });
+*/
 
 Route::resource("consultas","ConsultaController");
 
@@ -39,4 +41,7 @@ Route::get('invitar', function () {
 });
 */
 
-?>
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+

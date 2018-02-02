@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Consulta;
 
 class ConsultaController extends Controller
 {
@@ -14,6 +15,8 @@ class ConsultaController extends Controller
     public function index()
     {
         //
+
+        return view('consultas/consultas', array( 'arrayConsultas' =>Consulta::All() ));
     }
 
     /**
@@ -23,7 +26,7 @@ class ConsultaController extends Controller
      */
     public function create()
     {
-        //
+        return view('consultas/crear_consultas');
     }
 
     /**
@@ -34,6 +37,10 @@ class ConsultaController extends Controller
      */
     public function store(Request $request)
     {
+        $c = new Consulta();
+        $c->consulta = $request->input('nombreConsulta');
+        $c->usuario_id = $request->input('usuario');
+        $c->save();
         //
     }
 
